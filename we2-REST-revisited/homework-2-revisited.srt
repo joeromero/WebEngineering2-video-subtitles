@@ -46,7 +46,7 @@ You can answer this question only if you know all 6 REST constraints
 
 11
 00:01:44,932 --> 00:01:58,402
-and if have understood a principle thatis at the heart of the Uniform Interface constraint:
+and if have understood a principle that is at the heart of the Uniform Interface constraint:
 HATEOAS
 
 12
@@ -191,7 +191,7 @@ We are in the lucky position to have such a manual.
 
 47
 00:07:07,892 --> 00:07:13,842
-das wurde ja auch vor der hausaufgabe deutlich formuliert.
+
 
 48
 00:07:14,092 --> 00:07:17,882
@@ -286,7 +286,7 @@ There is one more resource: - Statistics
 
 70
 00:09:20,812 --> 00:09:26,722
-Question 2: Once you know the resources, you can easily find the correspondig URIs.
+Question 2: Once you know the resources, you can easily find the corresponding URIs.
 
 71
 00:09:26,972 --> 00:09:30,472
@@ -352,7 +352,7 @@ because ARSnova uses a cookie - a Java session ID.
 
 86
 00:11:22,772 --> 00:11:32,122
-The counter-argument is that some sort of authentication and authorisation is necessary
+The counter-argument is that some sort of authentication and authorization is necessary
 
 87
 00:11:32,372 --> 00:11:38,602
@@ -384,5 +384,5 @@ The application state, however, is not managed on the server side.
 
 94
 00:12:27,572 --> 00:12:41,362
-Der verstoß istdas nichteinhalten des HATEOAS kriteriums.
+The REST constraint violated by the ARSnova app is the HATEOAS criterion.
 

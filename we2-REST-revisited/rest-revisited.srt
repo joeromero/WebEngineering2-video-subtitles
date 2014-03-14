@@ -68,11 +68,11 @@ Because of that, we need do a Use Case Analysis before we start developing.
 
 17
 00:02:37,292 --> 00:02:46,122
-These best practices are summmarized by term "Use case driven development/design".
+These best practices are summmarized by the term "Use case driven development/design".
 
 18
 00:02:46,372 --> 00:03:00,442
-Thus, we always have to analyse the use cases and ask ourselves: What does the user want to do with the software.
+Thus, we always have to analyze the use cases and ask ourselves: What does the user want to do with the software.
 
 19
 00:03:00,692 --> 00:03:06,882
@@ -116,7 +116,7 @@ The website "Programmable Web" (http://) aims to list all existing REST APIs (an
 
 29
 00:04:59,572 --> 00:05:03,072
-This site offers the possibilty to filter all APIs according to different criteria like protocols, data format etc.
+This site offers the possibility to filter all APIs according to different criteria like protocols, data format etc.
 
 30
 00:05:03,322 --> 00:05:17,822
@@ -160,7 +160,7 @@ Therefore, we need to understand the architectural requirements,  i.e. the 6 con
 
 40
 00:06:56,642 --> 00:07:05,392
-Client-Server: We have seen that the web is realised as a Client/Server architecture. In this MOOC, we will build a client, not a server side service.
+Client-Server: We have seen that the web is realized as a Client/Server architecture. In this MOOC, we will build a client, not a server side service.
 
 41
 00:07:05,642 --> 00:07:13,602
@@ -168,7 +168,7 @@ This client should communicate with the backend in a stateless way.
 
 42
 00:07:13,852 --> 00:07:22,722
-As many request as possible shall be realised via HTTP GET requests.
+As many request as possible shall be realized via HTTP GET requests.
 
 43
 00:07:22,972 --> 00:07:31,842

@@ -156,11 +156,11 @@ You can use that API without knowing at all how the services were implemented.
 
 39
 00:06:43,692 --> 00:06:47,642
-It is an interface that abtracts completely from the implementation, offered as a Software as a Service.
+It is an interface that abstracts completely from the implementation, offered as a Software as a Service.
 
 40
 00:06:47,892 --> 00:06:51,392
-Now lets have a look at the THM wiki which we as computer scientest implemented
+Now lets have a look at the THM wiki which we as computer scientist implemented
 
 41
 00:06:51,642 --> 00:07:00,242

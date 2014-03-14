@@ -144,7 +144,7 @@ As soon as the attribute of the XMLHttpRequest object reaches a specific value -
 
 36
 00:08:15,812 --> 00:08:18,602
-What are the pros and xons of AJAX?
+What are the pros and cons of AJAX?
 
 37
 00:08:18,852 --> 00:08:23,002
