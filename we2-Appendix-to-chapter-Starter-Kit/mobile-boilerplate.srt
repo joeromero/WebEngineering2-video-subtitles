@@ -1,0 +1,175 @@
+0
+00:00:00,000 --> 00:00:05,322
+Welcome to the 2nd part of Web Engineering.
+
+1
+00:00:05,572 --> 00:00:10,082
+My name is Klaus Quibeldey-Cirkel.
+
+2
+00:00:10,332 --> 00:00:20,122
+In this chapter I will explain why we will use Mobile Boilerplate (and not Bootstrap or another CSS framework).
+
+3
+00:00:20,372 --> 00:00:26,642
+(Note: Mobile Boilerplate is not required for the Sencha Touch app later in this course. Check out this discussion for more info:
+https://iversity.org/my/courses/web-engineering-ii-developing-mobile-html5-apps/discussions/28417?category=course_related
+
+
+4
+00:00:29,642 --> 00:00:33,322
+In the following we will discuss the following topics:
+
+5
+00:00:33,572 --> 00:01:08,082
+- Best practices
+- How to make a web app look like a native app
+- Cross Browser support on mobile devices
+ - How to implement Responsive web design
+- How to optimize the server settings to ensure a maximum of mobile performance
+
+6
+00:01:08,332 --> 00:01:25,602
+1. Best Practices
+The goal in software engineering is to reuse practices so as not to reinvent the wheel over and over again.
+
+7
+00:01:25,852 --> 00:01:36,002
+Frameworks, templates and boilerplates have been developed to get into production as fast as possible.
+
+8
+00:01:36,252 --> 00:01:57,002
+Mobile Boilerplate is based on the older HTML5 Boilerplate by the same project team.
+
+9
+00:01:57,252 --> 00:02:09,482
+It comprises many man-years of experience in a front-end template that would take time if you had to develop it anew for each new project.
+
+10
+00:02:09,732 --> 00:02:38,482
+By using the boilerplate we can concentrate on developing our app without wasting time on trying to get it to work on all the different mobile and desktop platforms or browsers with all their shortcomings.
+
+11
+00:02:38,732 --> 00:03:20,232
+2.Make web apps look native
+(To develop native apps, you'd need to learn a programming language like Objective-C for iOS, Java for Android or C# for Windows mobile)
+
+12
+00:03:20,372 --> 00:03:31,282
+In this course, don't have that knowledge, therefore we will develop web apps using standard web techniques. 
+
+13
+00:03:31,532 --> 00:03:41,642
+However, we don't always want our apps to look like a web app.
+
+14
+00:03:41,892 --> 00:03:51,602
+To make it look more like a native app, we can place a shortcut icon on the home screen.
+
+15
+00:03:51,852 --> 00:04:23,722
+Example: ARSnova
+ARSnova is a web app, but it can be accessed via the icon on the home screen that looks like the icon of any other native app.
+
+16
+00:04:23,972 --> 00:04:41,162
+Under iOS, we can also define a startup image, that can help to obfuscate the relatively long loading times of web apps.
+
+17
+00:04:41,412 --> 00:05:05,482
+We can also make use of full screen support, to avoid wasting the space that is usually taken by the navigation bars and address lines in browsers.
+
+18
+00:05:05,732 --> 00:05:35,722
+ARSnova is a web app and if opened in a desktop browser, it doesn't look great. A lot of empty space ... But, it was designed with mobile first in mind.
+
+19
+00:05:35,972 --> 00:05:39,472
+
+
+20
+00:05:39,722 --> 00:05:43,222
+
+
+21
+00:05:42,472 --> 00:05:54,882
+If we open ARSnova in a browser on a smartphone, it is immediately recognizable as a web app ...
+
+22
+00:05:55,132 --> 00:06:09,632
+... with all the the so called  browser chrome (i.e. the address line on top and the navigation bar in the bottom).
+
+23
+00:06:09,882 --> 00:06:51,202
+On an iOS or Android device, you can place a web app on the home screen. If such an icon has been defined for you app, it will then show up on the home screen together with a title.
+
+24
+00:06:51,452 --> 00:07:06,602
+If you call the app via the home screen button, there will be no browser chrome anymore.
+
+25
+00:07:06,852 --> 00:07:40,802
+3. HTML5/CSS Cross Browser Support
+On top of the main desktop browsers, there are all the different mobile browsers on the different platforms that need to be supported.
+
+26
+00:07:41,052 --> 00:07:47,802
+Some of these browsers, especially the browsers on old Android versions, support hardly any HTML5/CSS3 features.
+
+27
+00:07:48,052 --> 00:07:54,402
+There are also problems regarding the basic configuration of browsers.
+
+28
+00:07:54,652 --> 00:08:50,002
+The Mobile Boilerplate includes a normalization stylesheet (normalize.css) that aims to unify browser settings with regard to properties of the CSS box model (border, margins, padding etc.)
+
+29
+00:08:50,252 --> 00:09:29,122
+Also included with MBP: modernizr.js.
+Modernizr detects what HTML5/CSS2 features are supported by a browser. The missing features can then be amended by using polyfills or other hacks.
+
+30
+00:09:29,372 --> 00:09:32,872
+
+
+31
+00:09:29,372 --> 00:09:48,922
+
+
+32
+00:09:49,172 --> 00:10:35,642
+4. Responsive Web Design
+MBP features
+- Polyfills for CSS mediaqueries
+- meta tag for viewport
+- user agent detection
+
+33
+00:10:35,892 --> 00:10:40,082
+5. Mobile Performance Optimization
+
+34
+00:10:40,332 --> 00:11:04,842
+One of the most important means to optimize a website/web app is to reduce the number of HTTP requests.
+
+35
+00:11:05,092 --> 00:11:41,482
+MBP can be used with the Ant build script that concatenates JavaScript and CSS files into one.
+
+36
+00:11:41,732 --> 00:12:36,202
+The script also minifies JavaScript, CSS and HTML files (by deleting comments, blanks etc) and optimizes JPEG and PNG files. The result are faster load times.
+
+37
+00:12:36,452 --> 00:13:09,362
+The Ant build script helps to automate the deployment workflow by automating all of these tasks to get ready for production.
+
+38
+00:13:09,612 --> 00:13:19,362
+The video in this unit explains how to install and use the Ant build script.
+
+39
+00:13:19,612 --> 00:13:50,122
+The Mobile Boilerplate also ships with an .htaccess file that includes all the necessary Apache web server settings for optimization and security.
+

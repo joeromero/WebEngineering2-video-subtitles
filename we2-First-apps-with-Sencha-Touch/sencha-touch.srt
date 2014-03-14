@@ -1,0 +1,231 @@
+0
+00:00:00,000 --> 00:00:03,500
+Welcome to our new chapter.
+
+1
+00:00:03,750 --> 00:00:10,602
+This chapter will be about developing web apps using the Sencha Touch framework.
+
+2
+00:00:10,852 --> 00:00:14,352
+Let's start with a quick overview and the learning objectives.
+
+3
+00:00:14,602 --> 00:00:30,282
+First, we have to clarify the difference between a JavaScript framework and a JavaScript library.
+
+4
+00:00:30,532 --> 00:00:39,402
+While jQuery Mobile represents a JS library, Sencha Touch represents a JS framework.
+
+5
+00:00:39,652 --> 00:00:44,162
+The are several criteria that differentiate a library from a framework:
+
+6
+00:00:44,412 --> 00:00:49,282
+1. The procedural criterion
+
+7
+00:00:49,532 --> 00:01:08,842
+A framework is based on the Inversion of Control pattern or - to put it more colloquially - on the Hollywood Principle of "Don't call us, we'll call you".
+
+8
+00:01:09,092 --> 00:01:20,002
+Hollywood principle means: Hollywood will call you as a actor, it doesn't make sense to apply.
+
+9
+00:01:20,252 --> 00:01:28,202
+For your code this means that the control flow is based on the framework.
+
+10
+00:01:28,452 --> 00:01:39,242
+You will adapt the framework to your purposes and implement the interfaces, but when you call the app, the framework is called.
+
+11
+00:01:39,492 --> 00:01:54,762
+A library, on the contrary, is more of a toolkit, a collection of building blocks that you can use to build your app, but you are left in control.
+
+12
+00:01:55,012 --> 00:02:03,642
+The control flow is based on your application. You develop your code using library elements.
+
+13
+00:02:03,892 --> 00:02:15,322
+2. The structural criterion (that I'd like to point out in this chapter)
+
+14
+00:02:15,572 --> 00:02:28,202
+The Model-View-Controller (MVC) architecture of the code, also called Separation of Concerns.
+
+15
+00:02:28,452 --> 00:02:40,202
+The term Separation of Concerns (SoC) was coined in the 1970s by one of the great computer scientist of the last century, Edsger W. Dijkstra.
+
+16
+00:02:40,452 --> 00:03:06,122
+It resulted from the desire to overcome the software crisis by separating tasks and defining interfaces to avoid monolithic applications.
+
+17
+00:03:06,372 --> 00:03:29,122
+In a GUI orientated application, we have views in the foreground and in the background the data model. In between both, the programming logic.
+
+18
+00:03:29,372 --> 00:03:35,362
+This chapter includes several videos that further explain the MVC paradigm.
+
+19
+00:03:37,362 --> 00:03:45,442
+Let's get to the Sencha Touch App that is the objective of this course.
+
+20
+00:03:45,692 --> 00:03:56,602
+Using a framework like Sencha Touch makes developing a mobile HTML5 app short and straight.
+
+21
+00:03:56,852 --> 00:04:04,802
+To get an overview of the features of Sencha Touch, you should study the ST Kitchen Sink app.
+
+22
+00:04:05,052 --> 00:04:07,522
+Here it is:
+
+23
+00:04:07,772 --> 00:04:14,282
+The example is a working app, you can open it on a mobile device.
+
+24
+00:04:14,532 --> 00:04:27,802
+(KQC starts iOS simulator ...)
+
+25
+00:04:28,052 --> 00:04:47,962
+Have a look at the features of the app and the GUI elements (buttons, sliders, toggles etc.).
+
+26
+00:04:48,212 --> 00:05:15,802
+In the next video I will show you how to install the resources in the course VM, i.e. the Sencha Touch framework and the Sencha Command tool to create an MVC structure for the project.
+
+27
+00:05:16,052 --> 00:05:31,322
+I have put together a collection of how-tos and tutorials for you to work through.
+
+28
+00:05:31,572 --> 00:05:34,242
+
+
+29
+00:05:34,492 --> 00:05:43,402
+Sencha puts special emphasis on providing extensive documentation for their products, especially Sencha Touch.
+
+30
+00:05:43,652 --> 00:06:08,642
+You will find the API documentation as well as guides and video tutorials on their website (http://docs.sencha.com/touch)
+
+31
+00:06:08,892 --> 00:06:26,242
+There are also a lot of example implementations and case studies which you can study and from which you can learn.
+
+32
+00:06:26,492 --> 00:06:30,602
+
+
+33
+00:06:30,852 --> 00:06:37,562
+There is one app I'd like to recommend: "Do I need my umbrella?".
+
+34
+00:06:37,812 --> 00:06:50,362
+There is a three-part documentation for this app that you can follow to build that app yourself within minutes.
+
+35
+00:06:50,612 --> 00:06:55,162
+This is how it looks like in a browser.
+
+36
+00:06:55,412 --> 00:07:03,682
+This app uses a web service to fetch the weather data for a particular location.
+
+37
+00:07:03,932 --> 00:07:08,842
+This app is also mobile-ready.
+
+38
+00:07:09,092 --> 00:07:16,402
+(KQC opens app in iOS simulator)
+
+39
+00:07:16,652 --> 00:07:20,152
+(The app has already been bookmarked on the home screen)
+
+40
+00:07:24,402 --> 00:07:36,522
+The app uses an HTML5 api called application cache or global storage.
+
+41
+00:07:36,772 --> 00:07:54,202
+I have set the settings for location and units in the browser once and the app caches that information even after terminating the session.
+
+42
+00:07:54,452 --> 00:07:57,952
+
+
+43
+00:08:03,000 --> 00:08:14,242
+Sencha also offers a special treat: Visual app development without coding.
+
+44
+00:08:14,492 --> 00:08:23,522
+With Sencha Architect, Sencha makes it possible to generate code using drag & drop,
+
+45
+00:08:23,772 --> 00:08:31,002
+that is, to generate the code from a visual mockup of the future app.
+
+46
+00:08:31,252 --> 00:08:36,242
+I have included some videos that show the functionality of this application. You are encouraged to watch them.
+
+47
+00:08:36,492 --> 00:08:48,122
+If you want to test this application, you can use the 30-day trial version.
+
+48
+00:08:48,372 --> 00:08:53,922
+Now, let's get to the homework assignment, the fourth and last in this MOOC before the final exam.
+
+49
+00:08:54,172 --> 00:09:00,682
+The goal is to prove that you can successfully use the Sencha Touch framework.
+
+50
+00:09:00,932 --> 00:09:04,442
+For that purpose, you should create a minimalistic app.
+
+51
+00:09:04,692 --> 00:09:09,562
+and upload it to CloudControl.
+
+52
+00:09:09,812 --> 00:09:12,602
+Homework #4 is due on March 22, 2014, 23:59 (CET).
+
+53
+00:09:12,852 --> 00:09:16,202
+The homework will be assessed by peer review.
+
+54
+00:09:16,452 --> 00:09:39,282
+Here are the 3 requirements for the app: 
+1. Define and implement three different views. 
+2. The views must be accessible via the toolbar.
+2. Each view uses a different UI component.
+
+55
+00:09:39,532 --> 00:09:46,642
+It's up to you to decide how much time and effort you want to spend on the contents of the app.
+
+56
+00:09:46,892 --> 00:10:06,282
+The main purpose of this assignment is to show that you have worked through the tutorials and how-tos and are now ready to tackle the final exam app either alone or in a team.
+

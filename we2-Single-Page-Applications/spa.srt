@@ -1,0 +1,169 @@
+0
+00:00:00,000 --> 00:00:06,882
+Welcome to a new Chapter:
+"SPA - Single Page Application"
+
+1
+00:00:07,132 --> 00:00:19,762
+In this chapter we will outline the requirements that your app (as the practical part of the final exam) must meet.
+
+2
+00:00:20,012 --> 00:00:31,042
+First, let us define what a "Single Page Application" is.
+
+3
+00:00:31,292 --> 00:00:50,682
+A "Single Page Application" is a web application that is loaded once. All other content is injected dynamically into this page (into the DOM) without reloading.
+
+4
+00:00:50,932 --> 00:01:07,922
+In the past, proprietary plugins like Adobe Flash, Java Applets, or MS Silverlight were used to achieve the same effect.
+
+5
+00:01:08,172 --> 00:01:20,122
+All these approaches were aimed at imitating the look and feel of a native desktop application in the browser ...
+
+6
+00:01:20,372 --> 00:01:27,482
+i.e. showing real time behaviour and offering extensive graphics. 
+
+7
+00:01:27,732 --> 00:01:31,232
+
+
+8
+00:01:31,482 --> 00:01:41,682
+When Apple introduced the iPhone in 2007, Flash applications were more and more pushed back.
+
+9
+00:01:41,932 --> 00:01:47,962
+Flash applications weren't supported on iOS devices because they used too many resources.
+
+10
+00:01:48,212 --> 00:01:59,442
+Also, Steve Jobs was averse to Flash and other proprietary code on iPhone.
+
+11
+00:01:59,692 --> 00:02:12,442
+The strategy was to use purely web standards: W3C standards, IETF standards: Javascript
+
+12
+00:02:12,692 --> 00:02:20,722
+JavaScript Single Page Applications in conjunction with
+
+13
+00:02:20,972 --> 00:02:25,882
+AJAX, JSON, REST and Web Sockets.
+
+14
+00:02:26,132 --> 00:02:39,082
+AJAX is JavaScript that doesn't interrupt the JavaScript engine in the browser
+
+15
+00:02:39,332 --> 00:02:45,842
+Asynchronous means: I don't wait for the result of the server und continue only then ...
+
+16
+00:02:46,092 --> 00:02:54,602
+but I fetch the result later or I will get notified that something new is available.
+
+17
+00:02:54,852 --> 00:03:04,562
+JSON is the web developers' answer to the XML format, that was regarded as bulky.
+
+18
+00:03:04,812 --> 00:03:17,642
+While XML was taught for many years and standardized by the W3C, JSON is more compact and and easier to use with JavaScript.
+
+19
+00:03:17,892 --> 00:03:36,402
+The demand for more real time applications in the browser - without hacks on the HTTP level - resulted in the HTML5 standard WebSocket.
+
+20
+00:03:36,652 --> 00:03:47,522
+WebSocket is also a network protocol standard on the level below HTTP, i.e. on the common TCP/IP interface.
+
+21
+00:03:47,772 --> 00:03:52,402
+Now, what are the requirements for the final exam?
+
+22
+00:03:52,652 --> 00:03:55,722
+There will be a theorectical part, of course, but for the practical part of the exam:
+
+23
+00:03:56,972 --> 00:04:07,522
+I have already outlined the requirements before, but let me get more specific here:
+
+24
+00:04:07,772 --> 00:04:24,202
+If you plan to "go the path of least resistance", you can develop a simple AJAX app
+
+25
+00:04:24,452 --> 00:04:39,362
+that asynchronously calls the statistics data of ARSnova via the ARSnova REST API and visualizes them nicely using Sencha Touch widgets.
+
+26
+00:04:39,612 --> 00:04:45,842
+When finished, you need to upload your app to cloudcontrol.com.
+
+27
+00:04:46,092 --> 00:04:54,602
+It is NOT required to port your app to a native format using Phonegap and place it into the app stores.
+
+28
+00:04:54,852 --> 00:05:00,202
+Your second option: If you have found a group of like-minded people to build a team
+
+29
+00:05:00,452 --> 00:05:06,842
+including people with experience in design and people with experience in JavaScript
+
+30
+00:05:07,092 --> 00:05:10,592
+then you can venture to create a Sencha Touch Single Page mashup app 
+
+31
+00:05:10,842 --> 00:05:32,162
+The goal is to develop a mashup app that uses free public REST APIs to  create somehing completely new or to show it in a new way.
+
+32
+00:05:32,412 --> 00:05:37,762
+So much for the requirements of a team app.
+
+33
+00:05:38,012 --> 00:05:45,442
+However, keep in mind that team development is difficult, especially when done "offshore" (online).
+
+34
+00:05:45,692 --> 00:05:56,482
+Even big companies have problems with managing team development efficiently.
+
+35
+00:05:56,732 --> 00:06:00,322
+Last but not least:
+
+36
+00:06:00,572 --> 00:06:04,072
+Here is prove that ARSnova is a single page application:
+
+37
+00:06:04,322 --> 00:06:15,122
+If you visit the ARSnova project on GitHub (folder arsnova-mobile/src/main/webapp), you will only find one html file.
+
+38
+00:06:15,372 --> 00:06:25,882
+This HTML file is subsequently filled with content and the DOM is built using AJAX calls.
+
+39
+00:06:26,132 --> 00:06:32,482
+You remember: One of the REST constraints was reloading code.
+
+40
+00:06:33,482 --> 00:06:39,082
+These are actually snippets. What we are doing here is exactly what Roy Fielding always wanted:
+
+41
+00:06:40,332 --> 00:06:48,832
+Code on demand.
+

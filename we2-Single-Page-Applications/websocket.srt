@@ -1,0 +1,377 @@
+0
+00:00:00,000 --> 00:00:08,722
+In this chapter we will examine the key evolutionary step in web technology:
+ WebSocket
+
+1
+00:00:08,972 --> 00:00:17,322
+On the one hand, WebSocket is a W3C standard HTML5 API.
+
+2
+00:00:17,572 --> 00:00:22,402
+On the other hand, it is a protocol of the IETF, a network protocol.
+
+3
+00:00:22,652 --> 00:00:33,802
+WebSocket allows web developers to use real time behavior in the browser.
+
+4
+00:00:36,052 --> 00:00:39,522
+How is this possible?
+
+5
+00:00:39,772 --> 00:00:51,762
+ The WebSocket protocol uses the application-level HTTP in the OSI reference model only to establish a connection.
+
+6
+00:00:52,012 --> 00:01:00,482
+Once the connection is established, the communication takes place on the transport layer TCP.
+
+7
+00:01:00,732 --> 00:01:08,482
+That's why WebSocket is also called "TCP for the Web".
+
+8
+00:01:08,732 --> 00:01:23,482
+In message communication, this model is called full-duplex, i.e. a channel with intercom properties,
+
+9
+00:01:23,732 --> 00:01:31,362
+bi-directional and asynchronous.
+
+10
+00:01:31,612 --> 00:01:36,842
+What can be achieved with it?
+
+11
+00:01:37,092 --> 00:01:45,242
+By using WebSockets, different browsers can communicate with one another.
+
+12
+00:01:45,492 --> 00:01:55,882
+If browser 2 wants to communicate with browser 1 on a different device – with the server as an intermediary – ,
+
+13
+00:01:56,132 --> 00:02:04,882
+and if this communication is bi-directional, then browser 1 can also send a response to browser 2 via the server.
+
+14
+00:02:05,132 --> 00:02:12,682
+The browser communicates with the server bi-directionally.
+
+15
+00:02:12,932 --> 00:02:32,842
+For the first time, the server can perform a data push, that is, send a request to the browser. This behavior is in sharp contrast to the request-response paradigm on the HTTP level.
+
+16
+00:02:33,092 --> 00:02:36,592
+
+
+17
+00:02:36,842 --> 00:02:44,562
+How to change from HTTP to WebSocket, what are the pros and cons?
+
+18
+00:02:44,812 --> 00:02:59,602
+Let's start with HTTP 1.1. The standard that was defined back in 1999 by the W3C and the IETF.
+
+19
+00:02:59,852 --> 00:03:04,322
+You remember, we discussed this extensively in Web Engineering I.
+
+20
+00:03:04,572 --> 00:03:10,082
+HTTP 1.1 is based on the transport layer TCP over IP.
+
+21
+00:03:10,332 --> 00:03:21,042
+The basic paradigm of communication in HTTP 1.1 is: The client sends a request and the server sends a response. 
+
+22
+00:03:21,292 --> 00:03:28,722
+That means, the communication occurs only in one direction. This type of communication is called half-duplex.
+
+23
+00:03:28,972 --> 00:03:45,202
+To circumvent these restrictions, Web engineers were inventive and tried to emulate real time communication on the HTTP protocol.
+
+24
+00:03:45,452 --> 00:03:54,682
+They did so by using hacks like "Polling", "Long Polling" (also called "Hanging GET") or "Streaming".
+
+25
+00:03:54,932 --> 00:03:58,432
+
+
+26
+00:03:58,682 --> 00:04:06,082
+The WebSocket protocol is standardized by the IETF, 2011.
+
+27
+00:04:06,332 --> 00:04:09,832
+
+
+28
+00:04:10,082 --> 00:04:15,842
+WebSocket is also based on the 4th layer (the transport layer) of the OSI model, TCP over IP.
+
+29
+00:04:16,092 --> 00:04:19,592
+The WebSocket protocol is frame-based.
+
+30
+00:04:19,842 --> 00:04:31,282
+The WebSocket protocol allows the server to talk to the browser and push data to it.
+
+31
+00:04:31,532 --> 00:04:43,082
+Thus, the communication is a two-way communication, i.e. full-duplex and asynchronous.
+
+32
+00:04:44,092 --> 00:05:04,242
+This is different from how a walkie-talkie works, where the receiver of a message has to wait for an end signal from the sender before he can send his message.
+
+33
+00:05:04,492 --> 00:05:11,322
+WebSocket communication = Full-duplex dual-channel intercommunication.
+
+34
+00:05:11,572 --> 00:05:30,802
+WebSockets implement native real-time behavior without the overhead of HTTP request-response header parameters and values.
+
+35
+00:05:31,052 --> 00:05:34,552
+
+
+36
+00:05:34,802 --> 00:05:48,882
+Let's have a look at the three hacks mentioned before that have been widely used on the HTTP level before WebSockets became available.
+
+37
+00:05:49,132 --> 00:05:54,722
+The most trivial method is called "Polling".
+
+38
+00:05:54,972 --> 00:06:09,242
+The browser sends requests to the server at regular intervals and the server always sends a response in return.
+
+39
+00:06:09,492 --> 00:06:20,122
+If there is no event, the response is empty, i.e there is no payload.
+
+40
+00:06:20,372 --> 00:06:38,402
+If there is an event, the server sends the event to the browser.
+
+41
+00:06:38,652 --> 00:06:52,152
+This method binds resources, because connections have to be initiated, kept open and closed again.
+
+42
+00:06:52,402 --> 00:07:03,482
+In our first implementation of the ARSnova app we also took this approach.
+
+43
+00:07:03,732 --> 00:07:10,482
+However, we soon abandoned this idea, because it puts too much of a strain on the resources.
+
+44
+00:07:10,732 --> 00:07:14,232
+
+
+45
+00:07:14,482 --> 00:07:18,482
+Another technique is "Long Polling" which can have two different implementations:
+
+46
+00:07:18,732 --> 00:07:25,322
+For browsers without AJAX support: Long Polling with iframes,
+
+47
+00:07:25,572 --> 00:07:39,362
+The client sends a GET request and transmits an iframe segment. The iframe includes a  JavaScript snippet.
+
+48
+00:07:39,612 --> 00:07:50,442
+If there is an event, the server will send the iframe with JavaScript and the browser will process the script tags.
+
+49
+00:07:50,692 --> 00:07:56,882
+Once that is done, the client will send the next GET request to the server and transmit the iframe.
+
+50
+00:07:57,132 --> 00:08:06,162
+If there is no event, the server holds the request open until response information becomes available.
+
+51
+00:08:06,412 --> 00:08:13,642
+When the information is available, the iframe will be returned  to the browser (with JavaScript).
+
+52
+00:08:13,892 --> 00:08:18,122
+Long Polling with iframe is a "hanging GET":
+
+53
+00:08:18,372 --> 00:08:24,882
+The response is delayed until an event occurs. (Translator's note: The advantage is that no empty responses are sent as in traditional polling)
+
+54
+00:08:25,132 --> 00:08:28,232
+Then, a new connection has to be established.
+
+55
+00:08:28,482 --> 00:08:32,122
+The connection must be kept open until an event occurs.
+
+56
+00:08:32,372 --> 00:08:42,522
+Timeouts were introduced so as not to strain the connection capacity of a server beyond measure. 
+
+57
+00:08:42,772 --> 00:08:48,442
+Ajax-compliant browser use the XMLHttpRequest object
+
+58
+00:08:48,692 --> 00:08:57,842
+and the JSON response is filled with an event …
+
+59
+00:08:58,092 --> 00:08:59,442
+… as soon as it occurs.
+
+60
+00:08:59,692 --> 00:09:08,322
+There is also always a delay, because the response to the AJAX call is event-driven.
+
+61
+00:09:08,572 --> 00:09:12,072
+
+
+62
+00:09:12,322 --> 00:09:15,822
+Here's an overview of the WebSocket protocol:
+
+63
+00:09:16,072 --> 00:09:22,802
+It starts with an initial handshake between client and server. The client sends a standard GET request to a resource ( symbolized by the orange line in the diagram).
+
+64
+00:09:23,052 --> 00:09:30,282
+In this case the resource is /chat. The protocol used is HTTP 1.1.
+
+65
+00:09:30,532 --> 00:09:39,362
+The request header includes two new header parameters:
+- Upgrade: (with the value) websocket
+- Connection: (with the value) Upgrade
+
+66
+00:09:39,612 --> 00:09:48,042
+There's also a key that is randomly generated in the client and is used to identify the client.
+
+67
+00:09:48,292 --> 00:10:07,842
+If a sub-protocol (chat, superchat) is available on the server, this can also be specified in the header.
+
+68
+00:10:08,092 --> 00:10:15,962
+The version number of the WebSocket protocol used should be included, because different versions are not compatible.
+
+69
+00:10:16,212 --> 00:10:24,202
+As soon as the server receives the request, a TCP connection is established …
+
+70
+00:10:24,452 --> 00:10:36,952
+… and the server responds with the status 101 Switching Protocols to indicate that the request can be handled.
+
+71
+00:10:37,202 --> 00:10:43,522
+The server response contains the same header information as the request:
+Ugrade: websocket
+Connection: Upgrade
+
+72
+00:10:43,772 --> 00:10:57,282
+The server generates a unique key by combining the client-side key with a global unique identifier.
+
+73
+00:10:57,532 --> 00:11:12,882
+The response header also includes information about the sub-protocol the server understands.
+
+74
+00:11:13,132 --> 00:11:20,922
+Once this information is exchanged between client and server, the message exchange itself takes place purely frame-based.
+
+75
+00:11:21,172 --> 00:11:26,442
+That means, there is nothing but a payload going from one side to the other.
+
+76
+00:11:26,692 --> 00:11:29,192
+
+
+77
+00:11:29,942 --> 00:11:34,482
+A chief developer at Google summarized this behavior with the following quote.
+
+78
+00:11:34,732 --> 00:11:38,232
+
+
+79
+00:11:38,482 --> 00:12:14,522
+(Note: KQC rephrasing quote in German)
+
+80
+00:12:14,772 --> 00:12:16,522
+
+
+81
+00:12:16,772 --> 00:12:24,272
+If you visit  http://www.websocket.org you can access the WebSocket server via the WS protocol. 
+
+82
+00:12:24,272 --> 00:12:44,002
+The WebSocket protocol uses different URI schemes, WS or WSS where the last mentioned uses TLS (Transport Layer Security)
+
+83
+00:12:45,092 --> 00:12:56,682
+Currently, only Google Chrome Dev Tools offer an analysis option that supports the WebSocket protocol.
+
+84
+00:12:56,932 --> 00:12:59,282
+
+
+85
+00:12:59,532 --> 00:13:11,882
+When you visit WebSocket.org, you are greeted with a message that tells you if your browser understands WebSockets.
+
+86
+00:13:12,132 --> 00:13:15,632
+Today, all modern browsers do.
+
+87
+00:13:15,882 --> 00:13:27,042
+In the section below, I have logged it using Google Dev Tools.
+
+88
+00:13:27,292 --> 00:13:39,322
+You can see the handshake, the receipt for the handshake (101 Switching Protocols).
+
+89
+00:13:39,572 --> 00:13:46,602
+If you analyze the behavior of the ARSnova app in Firefox, you can also see this.
+
+90
+00:13:46,852 --> 00:13:56,122
+When you start ARSnova, a WebSocket connection is requested.
+
+91
+00:13:56,372 --> 00:14:09,962
+You will see, that the server responds with the corresponding response code and response phrase, i.e. 101 Switching Protocols.
+
+92
+00:14:10,212 --> 00:14:23,042
+Here you can see the request header with the header parameters Upgrade and the unique key.
+

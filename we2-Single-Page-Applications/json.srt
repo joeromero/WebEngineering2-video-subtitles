@@ -1,0 +1,100 @@
+0
+00:00:00,000 --> 00:00:06,842
+Now, let's have a look at JSON: JavaScript Object Notation
+
+1
+00:00:07,092 --> 00:00:14,922
+JSON is quite easy to explain. I promise, this video is only 3 minutes long.
+
+2
+00:00:15,172 --> 00:00:24,672
+JSON is lightweight (not as bulky as XML), 
+
+3
+00:00:24,922 --> 00:00:29,802
+text-based (UTF-8 encoding),
+
+4
+00:00:30,052 --> 00:00:50,842
+language-independent (despite its name), all modern languages can parse JSON objects or convert their own objects into JSON strings.
+
+5
+00:00:51,092 --> 00:00:59,402
+JSON is the data exchange format of choice between client (browser) and server.
+
+6
+00:00:59,652 --> 00:01:18,000
+The mime-type of JSON is application/json as you could see when analyzing the ARSnova REST API in Chapter 4.
+
+7
+00:01:18,250 --> 00:01:38,842
+It was Douglas Crockford who defined the JSON notation in an RFC standard in 2006.
+
+8
+00:01:39,092 --> 00:01:48,362
+The IETF (Internet Engineering Task Force) RFC 7158 represents a second version of this standard.
+
+9
+00:01:48,612 --> 00:01:57,762
+JSON is a subset of JavaScript (or ECMAScript 262, as it is officially called).
+
+10
+00:01:58,012 --> 00:02:06,202
+and can be processed easily and without breaking any structures by JavaScript applications.
+
+11
+00:02:06,452 --> 00:02:13,522
+We will have a look at the syntax and the structure of this data exchange format in a minute.
+
+12
+00:02:13,772 --> 00:02:19,362
+You will see that the structure is kept very simple.
+
+13
+00:02:21,612 --> 00:02:33,882
+Compliant browsers support native JSON with two methods on the window object (window.JSON). JSON.parse() converts JSON objects into a JavaScript objects,
+
+14
+00:02:34,132 --> 00:02:42,522
+JSON.stringify() converts a Javascript object to JSON notation.
+
+15
+00:02:43,772 --> 00:02:47,082
+One page is sufficient to outline the JSON syntax:
+
+16
+00:02:47,332 --> 00:02:55,242
+With some JavaScript knowledge, there's not a lot that needs to be done.
+
+17
+00:02:56,992 --> 00:03:10,122
+As an outer structure there is either an objects within curly brackets 
+
+18
+00:03:10,372 --> 00:03:16,802
+or an array within square brackets.
+
+19
+00:03:17,052 --> 00:03:36,362
+Within an object, there is a pair consisting of a key (as string) and a value that will be explained below.
+
+20
+00:03:36,612 --> 00:03:50,802
+The value itself can be of the same type, i.e. an object can include other objects in a tree structure
+
+21
+00:03:51,052 --> 00:03:56,002
+and the same is true for arrays and mixed forms as well.
+
+22
+00:03:56,252 --> 00:03:58,752
+
+
+23
+00:03:59,002 --> 00:04:04,842
+On the internet you will find a JSON editor at http://www.jsoneditoronline.org.
+
+24
+00:04:05,092 --> 00:04:08,592
+Using that tool, you can easily build a JSON object or validate the syntax of a JSON object.
+
