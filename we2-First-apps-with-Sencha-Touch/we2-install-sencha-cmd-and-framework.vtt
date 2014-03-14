@@ -1,0 +1,285 @@
+
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.842
+In this video we'll cover the installation of the Sencha Command tool and the Sencha Touch framework.
+
+2
+00:00:07.092 --> 00:00:28.962
+1. Open a terminal window
+2. Check if Debian installation is up to date:
+$ sudo apt-get update
+(Note: the dollar sign ($) serves to indicate the command line, don't type it)
+
+3
+00:00:29.212 --> 00:00:34.042
+3. Enter password for sudo: 
+$ developer
+
+4
+00:00:34.292 --> 00:00:46.562
+(if there are updates, they are installed ...)
+
+5
+00:00:46.812 --> 00:01:03.002
+For Sencha Command we have to install the Ruby compiler, because Sencha Cmd needs Ruby for the CSS compiler (SASS/Compass).
+
+6
+00:01:03.252 --> 00:01:15.162
+To install Ruby:
+$ sudo apt-get install ruby
+
+7
+00:01:15.412 --> 00:01:18.912
+Confirm question if you want to continue:
+$ y
+
+8
+00:01:19.162 --> 00:01:26.482
+(Packet files are installed...)
+
+9
+00:01:26.732 --> 00:01:37.802
+Now download Sencha Command from the Sencha website at:
+http://www.sencha.com/products/sencha-cmd/download
+
+10
+00:01:38.052 --> 00:01:53.602
+For the Debian installation, click on Linux 32-bit. The respective files is downloaded.
+
+11
+00:01:53.852 --> 00:01:59.202
+If you have a slow connection, time for a coffee ...
+
+12
+00:01:59.452 --> 00:02:09.442
+Change into the download folder:
+$ cd Downloads
+
+13
+00:02:09.692 --> 00:02:12.962
+Check if the files are there:
+$ ls
+
+14
+00:02:13.212 --> 00:02:44.882
+Unzip the archive:
+$ unzip SenchaCmd-4.0.2.67-linux.run.zip
+
+15
+00:02:45.132 --> 00:02:48.762
+The zip file is unzipped.
+
+16
+00:02:49.012 --> 00:02:59.562
+We have to change the execution rights on the file before we can execute it.
+
+17
+00:02:59.812 --> 00:03:03.312
+Change the rights
+$ chmod 755 SenchaCmd.4.0.2.67-linux.run
+
+18
+00:03:03.562 --> 00:03:08.002
+Check again:
+$ ls
+The file is now executable.
+
+19
+00:03:08.252 --> 00:03:20.002
+Now its important that Sencha Command is not installed under sudo.
+Therefore, exit terminal:
+$ exit
+
+20
+00:03:20.252 --> 00:03:22.882
+Open a new terminal.
+
+21
+00:03:23.132 --> 00:03:36.602
+Change into Downloads folder again:
+$ cd Downloads
+
+22
+00:03:36.852 --> 00:03:39.042
+Show folder contents:
+$ ls
+
+23
+00:03:39.292 --> 00:04:09.642
+Execute the file:
+$ ./SenchaCmd-4.0.2.67-linux.run
+(./ is important!)
+
+24
+00:04:09.892 --> 00:04:23.482
+The installation starts and the setup dialog appears:
+- Click "Next".
+- Check "I accept the agreement".
+- Click "Next".
+
+25
+00:04:24.732 --> 00:04:26.922
+- Accept Installation Directory, click "Next".
+
+26
+00:04:27.172 --> 00:04:30.672
+-Click "Next" again on Ready to Install.
+
+27
+00:04:30.922 --> 00:04:39.362
+Sencha Cmd is installed ...
+
+28
+00:04:39.612 --> 00:04:42.242
+Click "Finish" to finish the installation.
+
+29
+00:04:42.492 --> 00:04:45.992
+
+
+30
+00:04:42.492 --> 00:04:54.362
+Now let's test if Sencha can be called:
+(Note: KQC tries to call sencha in the download folder and in the home folder but since that does not work, we don't need to follow that procedure)
+
+31
+00:04:54.612 --> 00:05:15.122
+Let's close the terminal window again:
+$ exit
+
+32
+00:05:15.372 --> 00:05:24.602
+Then, open a new terminal:
+
+33
+00:05:24.852 --> 00:05:28.352
+Type 
+$ sencha
+
+34
+00:05:28.602 --> 00:05:42.842
+Sencha is installed.
+As you can see, the tool offers quite a few options, categories, commands etc.
+
+35
+00:05:43.092 --> 00:05:47.322
+Next, we will install the Sencha Touch framework:
+
+36
+00:05:53.072 --> 00:05:58.762
+To download Sencha Touch, visit 
+http://www.sencha.com/products/touch/download
+
+37
+00:05:59.012 --> 00:06:11.642
+It's important that you choose the open source version, which is available unter the GNU GPLv3 license (not the commercial version!)
+
+38
+00:06:11.892 --> 00:06:26.842
+Click on Download and download of the package will start...
+Depending on your internet connection, have a cup of coffee while the download continues ...
+
+39
+00:06:27.092 --> 00:06:33.882
+In terminal, change into the Download folder again:
+$ cd Downloads
+
+40
+00:06:34.132 --> 00:06:48.722
+List the content of the folder:
+$ ls
+The Sencha Touch SDK is there: sencha-touch-2.3.1a-gpl.zip
+
+41
+00:06:48.972 --> 00:07:12.642
+Unzip the file:
+$ unzip sencha-touch-2.3.1a-gpl.zip
+
+42
+00:07:12.892 --> 00:07:21.602
+The package is unzipped...
+
+43
+00:07:21.852 --> 00:07:30.242
+Show the contents of the Download folder.
+$ ls
+You will see a new folder called "touch-2.3.1"
+
+44
+00:07:30.492 --> 00:07:35.522
+Now, we can create our project structure.
+
+45
+00:07:35.772 --> 00:07:39.522
+
+
+46
+00:07:39.772 --> 00:07:57.122
+Change into the touch-2.3.1 folder:
+$ cd touch-2.3.1
+
+47
+00:07:57.372 --> 00:08:00.872
+Show folder contents:
+$ ls
+
+48
+00:08:01.122 --> 00:08:05.242
+Now, we'll generate our first Sencha Touch project.
+
+49
+00:08:05.492 --> 00:08:25.482
+To do so. enter the following command:
+sencha -sdk (path_to_SDK) generate app (app_name) (path_to_app), i.e.
+$ sencha -sdk /home/developer/Downloads/touch-2.3.1/ generate app Helloworld /home/developer/example/helloworld
+
+50
+00:08:25.732 --> 00:08:33.922
+The new app is generated ...
+
+51
+00:08:34.172 --> 00:08:55.802
+Now, we will call the Sencha Cmd web server.First, we have to change into the project folder
+
+52
+00:08:56.052 --> 00:09:05.242
+
+
+53
+00:09:05.492 --> 00:09:35.042
+$ cd /home/developer/example/helloworld
+(this is the short version, KQC does the same in individual steps)
+
+54
+00:09:35.292 --> 00:09:46.482
+Start web server:
+$ sencha web start
+
+55
+00:09:46.732 --> 00:09:51.322
+The jetty server is started ...
+
+56
+00:09:51.572 --> 00:09:58.642
+Let's change to a browser ...
+
+57
+00:09:58.892 --> 00:10:19.762
+Call localhost on port 1841 in the browser address line:
+localhost:1841
+
+58
+00:10:20.012 --> 00:10:26.042
+Your newly generated app is opened ....
+
+59
+00:10:26.292 --> 00:10:30.762
+Brief check:
+Click on "Get Started", back to "Welcome".
+
+60
+00:10:31.012 --> 00:10:34.512
+Finished!
+

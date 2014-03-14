@@ -1,0 +1,222 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.500
+Welcome to a review on the chapter on "REST architectural style for mobile web applications"
+
+2
+00:00:10.602 --> 00:00:19.722
+In the next few videos I will explain what Homework #2 was all about
+
+3
+00:00:19.972 --> 00:00:23.472
+and why I assigned the Homework the way I did.
+
+4
+00:00:23.722 --> 00:00:32.322
+There were some problems and questions with that assignment
+
+5
+00:00:32.572 --> 00:00:38.362
+and therefore I think it is important to dig a bit deeper into REST.
+
+6
+00:00:38.612 --> 00:00:46.802
+When planning to develop a complex, ambitious web application,
+
+7
+00:00:47.052 --> 00:00:56.602
+you have to ask yourself if you have the necessary theoretical and practical background to achieve that goal.
+
+8
+00:00:56.852 --> 00:01:05.082
+At the beginning of this course, I recommended reading the Wikipedia article on "Web Engineering"
+
+9
+00:01:05.332 --> 00:01:09.842
+to give you some insight into the scope of this academic discipline.
+
+10
+00:01:10.092 --> 00:01:13.592
+Web Engineering is a continuation of Software Engineering.
+
+11
+00:01:13.842 --> 00:01:22.562
+Over 40 years ago, 1968, Web Engineering was borne out of the software crisis.
+
+12
+00:01:22.812 --> 00:01:34.725
+And for over 40 years, we have been developing methods, concepts, processes and development models for developing software.
+
+13
+00:01:35.002 --> 00:01:44.842
+Web Engineering means, to apply the techniques of software engineering on the Web
+
+14
+00:01:45.092 --> 00:01:49.322
+or to adapt these techniques to the requirements of the web.
+
+15
+00:01:49.572 --> 00:02:02.522
+Web Engineering is creative, intellectual and inspiring but it's also very difficult.
+
+16
+00:02:02.772 --> 00:02:28.802
+The reason for developing software is always a need or a requirement that one hopes to solve by using a software system.
+
+17
+00:02:28.802 --> 00:02:37.042
+Because of that, we need do a Use Case Analysis before we start developing.
+
+18
+00:02:37.292 --> 00:02:46.122
+These best practices are summmarized by the term "Use case driven development/design".
+
+19
+00:02:46.372 --> 00:03:00.442
+Thus, we always have to analyse the use cases and ask ourselves: What does the user want to do with the software.
+
+20
+00:03:00.692 --> 00:03:06.882
+How can REST help us here?
+
+21
+00:03:07.132 --> 00:03:23.482
+As an architectural style, REST offers us a uniform interface to address the resources of a web service using HTTP request methods.
+
+22
+00:03:23.732 --> 00:03:32.922
+In the field of software engineering, these resources are called "domain objects".
+
+23
+00:03:33.172 --> 00:03:56.442
+Thus, Domain Modelling can be defined as understanding the user and his conceptual world, i.e. his domain and set them in relation to each other.
+
+24
+00:03:56.692 --> 00:04:10.962
+Using REST and RESTful web services, we get a chance to use services we haven't even implemented and
+
+25
+00:04:11.212 --> 00:04:21.922
+to combine these services to achieve a result that is more than the sum of the individual services.
+
+26
+00:04:22.172 --> 00:04:25.672
+When we combining different services to create something new, this is called a Mashup.
+
+27
+00:04:25.922 --> 00:04:39.962
+Mashups allow us to concentrate on frontend development and to consume the services in the background via a RESTful API.
+
+28
+00:04:40.212 --> 00:04:43.712
+This option has been around for about 10 to 15 year now:
+
+29
+00:04:43.962 --> 00:04:59.322
+The website "Programmable Web" (http://www.programmableweb.com/apis/directory) aims to list all existing REST APIs (and other APIs as well) and to make them available.
+
+30
+00:04:59.572 --> 00:05:03.072
+This site offers the possibilty to filter all APIs according to different criteria like protocols, data format etc.
+
+31
+00:05:03.322 --> 00:05:17.822
+If we select REST as protocol and JSON as data format, we get the following list:
+
+32
+00:05:18.072 --> 00:05:28.602
+The Twitter REST API is the number one on that list with over 800 Mashups at the time the list was compiled
+
+33
+00:05:28.852 --> 00:05:32.482
+followed by Flickr, eBay, Yahoo etc.
+
+34
+00:05:32.732 --> 00:05:40.202
+In the videos that follow, I will go through Homework #2 with you.
+
+35
+00:05:40.452 --> 00:06:04.082
+And I will show you that it is easier to analyze (reverse engineer) a working REST API in order to understand the concepts and developments implemented in that app.
+
+36
+00:06:04.332 --> 00:06:15.042
+This will serve as a basis for the development of our own app based on a RESTful API.
+
+37
+00:06:15.292 --> 00:06:21.802
+Why is REST central in this MOOC?
+
+38
+00:06:22.052 --> 00:06:30.042
+It allows us to develop complex apps within only a few week.
+
+39
+00:06:30.292 --> 00:06:42.042
+because we can concentrate on the frontend and use abstract interfaces on the backend.
+
+40
+00:06:42.292 --> 00:06:52.642
+Therefore, we need to understand the architectural requirements,  i.e. the 6 constraints, of a REST architecture.
+
+41
+00:06:56.642 --> 00:07:05.392
+Client-Server: We have seen that the web is realised as a Client/Server architecture. In this MOOC, we will build a client, not a server side service.
+
+42
+00:07:05.642 --> 00:07:13.602
+This client should communicate with the backend in a stateless way.
+
+43
+00:07:13.852 --> 00:07:22.722
+As many request as possible shall be realised via HTTP GET requests.
+
+44
+00:07:22.972 --> 00:07:31.842
+because GET requests have no side effects and are cacheable on their way to the resource server.
+
+45
+00:07:32.092 --> 00:07:40.592
+Uniform interface: We will be using a very easy interface with easy operations.
+
+46
+00:07:40.842 --> 00:07:58.442
+Layered system: We will use the web as a layered system where requests can be answered early and near to the browser.
+
+47
+00:07:59.692 --> 00:08:15.722
+Code on Demand: This will lead us to techniques like AJAX as the last, but optional constraint as defined by Roy Fielding.
+
+48
+00:08:15.972 --> 00:08:23.002
+Roy Fielding showed us how the web is supposed to work.
+
+49
+00:08:23.252 --> 00:08:30.122
+And also how the web app we are about to develop should work.
+
+50
+00:08:30.372 --> 00:08:41.922
+It's the HATEOAS principle that is at the heart of the uniform interface and that is central to the homework and also to the app:
+
+51
+00:08:42.172 --> 00:08:53.002
+Hypermedia as the Engine of Application State.
+
+52
+00:08:53.252 --> 00:09:15.282
+You need to understand that your client is a state machine and the options available to a client are represented by hyperlinks within the representations of a resource.
+
+53
+00:09:15.532 --> 00:09:30.042
+The server doesn't maintain any information about the application state of the client.
+
+54
+00:09:30.292 --> 00:09:38.682
+But the server does hold information about the state of the resources the client requests.
+
+55
+00:09:38.932 --> 00:09:42.432
+Cut.
+

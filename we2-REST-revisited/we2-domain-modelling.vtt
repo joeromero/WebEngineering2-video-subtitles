@@ -1,0 +1,252 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:12.802
+Now that we have finished our use case analysis and know what the user wants to do with the software,
+
+2
+00:00:13.052 --> 00:00:27.202
+we can derive the domain objects from a use case diagram.
+
+3
+00:00:27.452 --> 00:00:30.952
+Let's have a look:
+
+4
+00:00:31.202 --> 00:00:36.162
+What is a Domain Object?
+
+5
+00:00:36.412 --> 00:00:39.912
+Domain Object is a technical term used in software engineering.
+
+6
+00:00:40.162 --> 00:00:55.762
+It describes a concept related to the application domain of the future user of a piece of software.
+
+7
+00:00:56.012 --> 00:01:08.842
+This may sound very abstract. What it means is that you need to become a domain expert in the field of the future users of the software to be able to model the expert world of those users correctly.
+
+8
+00:01:09.092 --> 00:01:15.282
+Example: If you want to develop a medical support system, let's say an imaging system,
+
+9
+00:01:15.532 --> 00:01:24.402
+then you have to immerse yourselves into the world of a medical expert,
+
+10
+00:01:24.652 --> 00:01:32.602
+lern their technical terms, analyze their processes,
+
+11
+00:01:32.852 --> 00:01:41.322
+and then turn all this information into plans and specifications for software development.
+
+12
+00:01:41.572 --> 00:01:51.842
+Finally, you need to get the approval of the domain experts.
+
+13
+00:01:52.092 --> 00:01:55.592
+Is this realistic?
+
+14
+00:01:55.842 --> 00:01:59.342
+Well, it's absolutely necessary.
+
+15
+00:01:59.592 --> 00:02:09.482
+You need to put yourselves into the roles of the users, i.e. the domain actors.
+
+16
+00:02:13.482 --> 00:02:18.162
+This is where software engineering comes in.
+
+17
+00:02:18.412 --> 00:02:31.912
+If you have a look at Unified Modelling Language (UML) diagrams that you find in the course material (in the videos of Derek Banas or on Wikipedia),
+
+18
+00:02:32.162 --> 00:02:42.722
+you will get an impression of what software engineering implies.
+
+19
+00:02:42.972 --> 00:02:51.802
+In case you want to perform application development from beginning to end.
+
+20
+00:02:52.052 --> 00:02:55.762
+This course can't teach you software engineering.
+
+21
+00:02:56.012 --> 00:03:08.002
+Software engineering is the subject of an entire academic training taught as computer science, software engineering, web engineering etc.
+
+22
+00:03:08.252 --> 00:03:22.442
+In this course, however, we will develop a web application and limit ourselves to the frontend.
+
+23
+00:03:22.692 --> 00:03:29.922
+We don't want to develop the web services, the domain objects;
+
+24
+00:03:30.172 --> 00:03:36.522
+we want to reuse the services available on the web and access them via their public REST Web APIs.
+
+25
+00:03:36.772 --> 00:03:46.082
+The web offers a plethora of services that we can use.
+
+26
+00:03:46.332 --> 00:03:58.802
+Therefore, we only need to learn the techniques the browser expects from us: i.e. Javascript, HTML5, CSS 3, AJAX, JSON and others.
+
+27
+00:03:59.052 --> 00:04:14.522
+We will rely on the ready-made services that are available to us on the web via REST APIs.
+
+28
+00:04:14.772 --> 00:04:29.642
+If a REST API is well documented, you will identify the domain objects within the URLs.
+
+29
+00:04:29.892 --> 00:04:35.392
+A REST API can have a hierarchical structure like the ARSnova app, where you have the domain object session on the first level,
+
+30
+00:04:36.642 --> 00:04:41.322
+then questions, and then answers to the questions.
+
+31
+00:04:44.572 --> 00:04:56.642
+or the domain objects (resources) the API makes available are canonically strung together.
+
+32
+00:04:56.892 --> 00:05:04.322
+Note: Not the resources themselves are transferred, but their representations .
+
+33
+00:05:04.572 --> 00:05:19.162
+A JSON object, an HTML object, an image, a video, all these are representations of the current state of the original resource on the backend.
+
+34
+00:05:19.412 --> 00:05:22.912
+
+
+35
+00:05:23.162 --> 00:05:43.962
+If you have done some research on the web, you may have come across the API documentation for the ARSnova backend which is available in German only.
+
+36
+00:05:44.212 --> 00:05:50.922
+In a minute, we will have a look at it.
+Link: <a href="https://wiki.thm.de/index.php/REST-API_und_Websocket-Events_von_ARSnova#URL-Liste">https://wiki.thm.de/index.php/REST-API_und_Websocket-Events_von_ARSnova#URL-Liste</a>
+
+37
+00:05:51.172 --> 00:06:03.562
+If an API documentation exists, it is usually self-explanatory.
+
+38
+00:06:03.812 --> 00:06:07.722
+Take a look at the Twitter API as an example of a well documented REST API.
+
+39
+00:06:07.972 --> 00:06:43.442
+You can use that API without knowing at all how the services were implemented.
+
+40
+00:06:43.692 --> 00:06:47.642
+It is an interface that abtracts completely from the implementation, offered as a Software as a Service.
+
+41
+00:06:47.892 --> 00:06:51.392
+Now lets have a look at the THM wiki which we computer scientist implemented
+
+42
+00:06:51.642 --> 00:07:00.242
+for use in application development within our faculty.
+
+43
+00:07:00.492 --> 00:07:10.442
+Among other documents, you will find the documentation for the ARSnova API.
+
+44
+00:07:10.692 --> 00:07:15.242
+Let's have a quick look:
+
+45
+00:07:15.492 --> 00:07:19.802
+You can have a closer look in your own time at home.
+
+46
+00:07:20.052 --> 00:07:42.282
+You can sort the table by columns.
+In the "Resource" column, we see the domain objects: Session, LecturerQuestion, LecturerQuestionAnswer, InterposedQuestion and Statistics.
+
+47
+00:07:42.532 --> 00:07:58.562
+While our English is far from perfect and some terms may not be quite correct, at least we have tried to make it available in English.
+
+48
+00:07:58.812 --> 00:08:08.282
+There are interposed questions, lecture questions, answers and that was it.
+
+49
+00:08:08.532 --> 00:08:13.002
+Then, we have used different verbs of the web:
+
+50
+00:08:13.252 --> 00:08:19.202
+PUT, POST, GET and DELETE.
+
+51
+00:08:19.452 --> 00:08:25.202
+In the third column, you find the URLs for the respective resources.
+
+52
+00:08:25.452 --> 00:08:28.952
+The results of calling a specific URL are described in the fourth column,
+
+53
+00:08:29.202 --> 00:08:37.682
+e.g. if you enter the URL /session/ (with the slash), you get a list of all session.
+
+54
+00:08:37.932 --> 00:08:47.842
+If you enter the URL for session without the slash, you get the current session.
+
+55
+00:08:48.092 --> 00:08:57.762
+In the next column - "Request encoding" - the data format of the response is given.
+
+56
+00:08:58.012 --> 00:09:10.482
+The data format is usually application/JSON, sometimes nothing, sometimes a query string that contains the information.
+
+57
+00:09:10.732 --> 00:09:30.322
+The 7th column lists the response codes related to each HTTP request, limited to some responses on the client side.
+
+58
+00:09:39.602 --> 00:09:49.202
+In the last column, the preconditions. In case you want to call the URL directly, you have to make sure that you meet the requirements, e.g.
+
+59
+00:09:49.452 --> 00:10:00.322
+if you have to be authenticated or if there is a valid session ID etc.;
+
+60
+00:10:00.572 --> 00:10:04.072
+otherwise you will get an error message.
+
+61
+00:10:04.322 --> 00:10:12.522
+That's it. Study it at rest. While there are certainly better API documentations,
+
+62
+00:10:12.772 --> 00:10:16.272
+at least this document is the attempt of a student to document an interface implemented by someone else.
+

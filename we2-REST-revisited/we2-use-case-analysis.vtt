@@ -1,0 +1,279 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:09.882
+Let's have a look at the first important step towards developing an app:
+
+2
+00:00:10.000 --> 00:00:18.042
+We need to ask ourselves, what our client and the future users of our app really want.
+
+3
+00:00:18.292 --> 00:00:22.042
+We need to perform a Use Case Analysis.
+
+4
+00:00:22.292 --> 00:00:37.562
+According to a research paper by Barry Boehm, 80% of all commercial software projects failed due to this most critical aspect of software development
+
+5
+00:00:37.812 --> 00:00:49.842
+because the people involved didn't make sure if they implemented what the user wanted.
+
+6
+00:00:50.092 --> 00:01:00.922
+The developers as strangers to the conceptual world of the user didn't involve the user in the development process nor ever ask if what was being developed corresponded with what the user expected.
+
+7
+00:01:01.172 --> 00:01:27.402
+Those projects were more concerned with acquiring an order, with implementing a software quickly, rather than involving the end user in the process to make sure that the development was still in line with user requirements.
+
+8
+00:01:27.652 --> 00:01:49.242
+This cartoon has a long tradition in software engineering. The original was first published in a research paper at the beginning of the 1990s
+
+9
+00:01:53.242 --> 00:01:56.742
+It serves to illustrate that the user is completely left out of the development process.
+
+10
+00:01:56.992 --> 00:02:26.842
+Usually, sales, marketing and project management are the people in touch with the user, briefly trying to find out what the user wants
+
+11
+00:02:02.992 --> 00:02:02.992
+while the developers are left behind to implement what they think the assignment is, a process that resembles playing Chinese Whispers.
+
+12
+00:02:32.592 --> 00:02:39.592
+The usability of the result will greatly differ depending on who documents a project, who is the domain expert.
+13
+00:02:40.842 --> 00:02:57.922
+With Marketing on one side, and Engineering on the other - most likely the result will not be usable.
+
+14
+00:02:58.882 --> 00:03:08.672
+This misconception continues during manufacturing, something has to be developed, deadlines have to be met etc.
+
+15
+00:03:08.922 --> 00:03:15.422
+But will the implementation finally meet the requirements?
+
+16
+00:03:15.672 --> 00:03:26.962
+In the end, it is left to the maintenance people to somehow make the software work.
+
+17
+00:03:27.212 --> 00:03:35.162
+The development of the ARSnova Audience Response System was no different from the processes described before.
+
+18
+00:03:35.412 --> 00:03:53.762
+The only difference was that this student project was supervised by university teachers (mainly me) who took the part of users and who  could intervene and get the project back on track.
+
+19
+00:03:54.012 --> 00:04:00.682
+But whenever I wasn't there to supervise the project, the development went its own way.
+
+20
+00:04:00.932 --> 00:04:06.162
+However, in the end we got it right.
+
+21
+00:04:06.412 --> 00:04:13.402
+And the user manual proves that we got it right:
+
+22
+00:04:13.652 --> 00:04:20.082
+It documents the application domain.
+
+23
+00:04:20.332 --> 00:04:23.832
+About ARSnova: What is it?
+
+24
+00:04:24.082 --> 00:04:31.082
+And then goes on to describe the different use cases in the different roles.
+
+25
+00:04:31.332 --> 00:04:38.242
+Audience Response Systems are simple in that there are two roles only: student and teacher.
+
+26
+00:04:38.492 --> 00:04:46.962
+The individual use cases are shown using screenshots of the app
+
+27
+00:04:47.212 --> 00:04:50.712
+as I will show you in a minute.
+
+28
+00:04:50.962 --> 00:05:07.842
+Please have a look at the course material regarding use cases because it is vital to understand what use cases are.
+
+29
+00:05:08.092 --> 00:05:11.592
+You have to ask who does what and when and what are the prerequisites,
+
+30
+00:05:11.842 --> 00:05:17.202
+what is the result after an action has been performed.
+
+31
+00:05:17.452 --> 00:05:26.762
+I recommend that you read the Wikipedia article about uses cases.
+
+32
+00:05:27.012 --> 00:05:32.962
+Our students have to study use case analysis and domain modelling for over three month,
+
+33
+00:05:33.212 --> 00:05:37.002
+but I still have my doubts as to whether this concept is really always understood.
+
+34
+00:05:37.252 --> 00:05:49.752
+However, the ARSnova manual describes the different use cases.
+
+35
+00:05:50.002 --> 00:05:58.362
+The uses cases include the objects that are manipulated
+
+36
+00:05:58.612 --> 00:06:00.842
+and those objects are the domain objects.
+
+37
+00:06:01.092 --> 00:06:07.042
+In the homework assignment, you were asked to indentify these domain objects:
+
+38
+00:06:11.042 --> 00:06:24.482
+To take the manual, work through really all the use cases and analyze the HTTP traffic
+
+39
+00:06:24.732 --> 00:06:28.232
+using the Firefox Add-ons Firebug or RESTclient.
+
+40
+00:06:28.482 --> 00:06:39.602
+Analyze the methods that used, the URLs of thoses resources and try to find the main resources.
+
+41
+00:06:39.852 --> 00:06:44.000
+
+Let's have a look at the manual.
+
+42
+00:06:44.352 --> 00:06:55.122
+The ARSnova manual is one of the few manuals really based on uses cases.
+
+43
+00:06:55.372 --> 00:07:05.562
+It describes the step-by-step procedures for each use case based on the screenshots of each individual action.
+
+44
+00:07:05.812 --> 00:07:13.082
+First, there is the project vision that is at the start of each software project.
+
+45
+00:07:13.332 --> 00:07:21.362
+The project vision is later transformed into a specification that describes the features of the app.
+
+46
+00:07:21.612 --> 00:07:27.762
+Next, there is an overview of the GUI elements
+
+47
+00:07:28.012 --> 00:07:40.802
+in the footer,
+
+48
+00:07:41.052 --> 00:07:45.002
+in the header and in the content area.
+
+49
+00:07:49.002 --> 00:07:56.402
+Now, let's have a look at the use cases in the role of a student:
+
+50
+00:07:56.652 --> 00:08:06.002
+Login and logout are not specific to ARSnova because these actions are common to all closed systems.
+
+51
+00:08:06.252 --> 00:08:13.042
+Therefore, they are not uses cases in the strict sense but nevertheless important to using the app.
+
+52
+00:08:13.292 --> 00:08:24.242
+The first use case is "Give Feedback".
+
+53
+00:08:24.492 --> 00:08:28.482
+This use case corresponds to the first domain object "feedback".
+
+54
+00:08:28.732 --> 00:08:37.442
+However, Feedback might not be a RESTful HTTP API domain object.
+
+55
+00:08:40.692 --> 00:08:53.842
+You will not find it there.
+But from the point of view of the application it is a feedback system, feedback as a concept is one of the central domain concepts.
+
+56
+00:08:54.092 --> 00:08:57.592
+The individual steps of each use case are numbered.
+
+57
+00:08:57.842 --> 00:09:01.342
+1. Tap Give Feedback.
+
+58
+00:09:01.592 --> 00:09:25.242
+Next: The result of performing the action, i.e. the next state in the client. The manual always shows the corresponding views in the app as screenshots.
+
+59
+00:09:25.492 --> 00:09:37.322
+What is not shown here: What happens if the user enters wrong input or if the prerequisites are not fulfilled, e.g. calling an URL without authentication etc.
+
+60
+00:09:37.572 --> 00:09:50.562
+Then performing these actions is not possible according to the specification.
+
+61
+00:09:50.812 --> 00:09:59.082
+There are of course other use cases: questions and answers
+
+62
+00:09:59.332 --> 00:10:02.832
+both from the point of view of student and teacher,
+
+63
+00:10:03.082 --> 00:10:06.582
+different question types,
+
+64
+00:10:06.832 --> 00:10:12.202
+questions of the teacher during a lecture
+
+65
+00:10:12.452 --> 00:10:18.002
+preparation questions before a lecture starts,
+
+66
+00:10:18.252 --> 00:10:28.002
+And as the last use case here: Statistics
+
+67
+00:10:28.252 --> 00:10:41.522
+Now, lets see if there are other uses cases in the role "Teacher".
+
+68
+00:10:41.772 --> 00:10:52.722
+The application case "Presentation Mode" allows the teacher to show questions to the audience during a lecture.
+
+69
+00:10:52.972 --> 00:11:22.972
+This mode includes presenting the questions and the possible answers and also to have a look at the question statistics.
+

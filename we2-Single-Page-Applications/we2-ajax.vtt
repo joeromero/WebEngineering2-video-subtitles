@@ -1,0 +1,338 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:09.402
+Now let's examine the most important component regarding the asynchronous behavior of modern web applications: AJAX
+
+2
+00:00:09.402 --> 00:00:18.602
+Asynchronous JavaScript (And XML) - that is, XML is no longer valid, we use JSON.
+
+3
+00:00:18.852 --> 00:00:33.722
+The term AJAX is not the original name, it was coined 8 years ago by Jesse James Garnett to make the technology more exciting.
+
+4
+00:00:33.972 --> 00:00:38.322
+AJAX was originally named XMLHttpRequest(XHR).
+
+5
+00:00:38.572 --> 00:00:58.842
+(Here follows an aside: The term AJAX associates both the intellectual world of greek mythology and the trivial world of household cleansers).
+
+6
+00:00:58.892 --> 00:01:03.202
+AJAX: Asynchronous JavaScript.
+
+7
+00:01:03.452 --> 00:01:21.802
+Microsoft introduced AJAX in 1999 in their Internet Explorer 5 as Active-X object for their web-based Office products (Outlook etc.).
+
+8
+00:01:22.052 --> 00:01:35.162
+But it was made popular by Jesse James Garrett and O'Reilly at several conferences in 2005.
+
+9
+00:01:35.412 --> 00:01:48.362
+AJAX technologies allow manipulating the DOM dynamically without having to reload the complete page.
+
+10
+00:01:48.612 --> 00:02:16.042
+AJAX, in fact, is not one technology or a standard, but a bundle of technologies: HTML, CSS, JavaScript, DOM (Document Object Model), XHR (XMLHttpRequest), JSON, and REST.
+
+11
+00:02:16.292 --> 00:02:32.882
+Using Asynchronous JavaScript, the client can send HTTP requests to the server without the JavaScript engine of the browser having to wait for a response.
+
+12
+00:02:33.132 --> 00:02:46.322
+Thus, we switch from an originally synchronous behavior of a JS-based website to an asynchronous one.
+
+13
+00:02:46.572 --> 00:02:59.362
+We can send requests but we can continue interacting with the user interface without having to wait for a response from the server.
+
+14
+00:02:59.612 --> 00:03:08.842
+Google proved that back in 2005 with its web-based applications like Gmail, Google Maps etc.
+
+15
+00:03:09.092 --> 00:03:22.802
+So, we don't really enter new grounds but we are near the technological forefront.
+
+16
+00:03:23.052 --> 00:03:25.202
+
+
+17
+00:03:25.452 --> 00:03:32.122
+Let's compare both approaches on the basis of some sequence diagrams.
+
+18
+00:03:32.372 --> 00:03:46.722
+(Aside: True sequence diagrams based on UML - Unified Modeling Language - are much more detailed and should directly translate into executable code. This is not the case here.(
+
+19
+00:03:46.972 --> 00:03:51.882
+(This is just to teach you some software engineering along the way.)
+
+20
+00:03:52.132 --> 00:03:54.162
+Anyway, here are two sequence diagrams.
+
+21
+00:03:54.412 --> 00:03:58.442
+On the left, the traditional method:
+
+22
+00:03:58.692 --> 00:04:22.642
+Webpages are called one after the other when a user clicks on a link and the complete content of the page is replaced by another page.
+
+23
+00:04:22.892 --> 00:04:43.802
+With asynchronous JavaScript, the user can continue to interact with the user interface of the website while ...
+
+24
+00:04:44.052 --> 00:04:57.842
+... one element - symbolized by the letter a - is replaced by the element symbolized by the letter b.
+
+25
+00:04:58.092 --> 00:05:01.592
+The rest of the page remains the same.
+
+26
+00:05:01.842 --> 00:05:16.722
+In the background, JavaScript sends a request to the server asynchronously to request the required information and to update the content of page 1.
+
+27
+00:05:16.972 --> 00:05:26.722
+The user stays on the page until the response to the request arrives and is executed.
+
+28
+00:05:26.972 --> 00:05:38.642
+This is the main difference between a multi-page application and a single-page application.
+
+29
+00:05:38.892 --> 00:05:48.682
+Let's dive into some more detail:
+
+30
+00:05:48.932 --> 00:05:56.682
+In the background, JavaScript communicates with the server.
+
+31
+00:05:56.932 --> 00:06:11.482
+In the foreground, JavaScript is used to implement the user interface.
+
+32
+00:06:11.732 --> 00:06:26.042
+First, a XMLHttpRequest object has to be created and assigned to the variable http.
+
+33
+00:06:26.292 --> 00:06:52.602
+Then, we issue a command to open a connection with open(), that is, we request the server by transferring the URL and some other parameters (e.g. if we want to act synchronously or asynchronously).
+
+34
+00:06:52.852 --> 00:07:24.362
+We open the connection and register an event handler - added to onreadystatechange - which is called when the response of the server arrives.
+
+35
+00:07:24.612 --> 00:07:34.722
+Next, we make a non-blocking request using send().
+
+36
+00:07:34.972 --> 00:08:15.562
+As soon as the attribute of the XMLHttpRequest object reaches a specific value - in this case 4, which means that the message is complete - the event handler will process it and reconfigure the DOM according to the message contained in the response.
+
+37
+00:08:15.812 --> 00:08:18.602
+What are the pros and xons of AJAX?
+
+38
+00:08:18.852 --> 00:08:23.002
+The benefits outweigh the disadvantages, so much in advance.
+
+39
+00:08:23.252 --> 00:08:37.722
+We don't depend on proprietary plugins like Adobe Flash or Microsoft Silverlight or safety-critical Java applets anymore.
+
+40
+00:08:37.972 --> 00:08:48.482
+Those were the techniques that were used to implement single-page apps before AJAX came up.
+
+41
+00:08:48.732 --> 00:08:52.232
+
+
+42
+00:08:48.732 --> 00:08:59.482
+However, with those techniques, you always perceived a structural break in a page.
+
+43
+00:08:59.732 --> 00:09:08.242
+Just recall what a JavaScript applet looked like ten years ago, it's really easy to recognize.
+
+44
+00:09:08.492 --> 00:09:24.962
+With AJAX, you get the fluid interaction behavior on a web page that users were used to from desktop applications.
+
+45
+00:09:25.212 --> 00:09:33.162
+That is to say: reactive, fluid and with a lot of graphics options.
+
+46
+00:09:33.412 --> 00:10:05.282
+Before AJAX, when the user clicked on a link and the complete page had to be reloaded, there was always a flicker, a sudden brightening of the page.
+
+47
+00:10:05.532 --> 00:10:15.682
+This behavior was noticeable to the user, it was obvious, that something has changed.
+
+48
+00:10:15.932 --> 00:10:37.442
+When using AJAX, JavaScript is continuously processed in the foreground without blocking anything. Only when there is new information, the respective element of the DOM will be changed.
+
+49
+00:10:37.692 --> 00:10:48.802
+The cons: The Same Origin Policy - a security measure - prevents AJAX calls across domains.
+
+50
+00:10:49.052 --> 00:10:56.762
+The browser calls JavaScript only if it comes from the same page where it originated.
+
+51
+00:10:57.012 --> 00:11:03.602
+The URI scheme must be completely identical.
+
+52
+00:11:03.852 --> 00:11:18.322
+If you call JS from another domain, the AJAX call is blocked for security reasons. That's a feature!
+
+53
+00:11:18.572 --> 00:11:29.522
+Today however, you want to make use of many different APIs.
+
+54
+00:11:29.772 --> 00:11:38.762
+That means, you have to change origin servers now and again. To make this possible, it's necessary to apply some tricks.
+
+55
+00:11:39.012 --> 00:11:51.362
+The W3C has recognized the problem and recommends the CORS standard (Cross-Origin Resource Sharing).
+
+56
+00:11:51.612 --> 00:12:07.242
+This standard allows for information exchange between server and browser.
+
+57
+00:12:07.492 --> 00:12:30.682
+JavaScript beginners are often irritated when they find that a web application doesn't run locally in the browser..
+
+58
+00:12:30.932 --> 00:12:35.122
+This is due to the Same Origin Policy being violated.
+
+59
+00:12:35.372 --> 00:13:01.682
+If the code calls the http:// or https:// protocol but the file is fetched from a local disk using the file:/// protocol, the URI scheme is not identical and therefore, the Same Origin Policy is violated.
+
+60
+00:13:01.932 --> 00:13:15.882
+Another disadvantage: In the early days of AJAX applications, the back button of the browser couldn't be used to return to a previous state of an application.
+
+61
+00:13:16.132 --> 00:13:23.922
+When the user hit the back button, instead of returning to the previous page, he returned to the page that he had visited before calling the single page application.
+
+62
+00:13:24.172 --> 00:13:27.672
+Thus, the user unintentionally left the application. That was no different with ARSnova.
+
+63
+00:13:27.922 --> 00:13:37.562
+Whenever someone hit the back button, he left the application. That is no longer the case.
+
+64
+00:13:37.812 --> 00:13:51.002
+Another difficulty was to achieve a good ranking in search engines if you can only specify one page but no new contents or states of the app.
+
+65
+00:13:51.252 --> 00:13:54.752
+
+
+66
+00:13:51.252 --> 00:13:58.642
+However, these problems have been resolved by standards such as History API and some other "tricks".
+
+67
+00:13:58.892 --> 00:14:02.392
+
+
+68
+00:14:02.642 --> 00:14:10.242
+You can reread all those specifications in the Working Draft of the W3C.
+
+69
+00:14:10.492 --> 00:14:20.962
+You may also find it interesting to see how such standards are documented.
+
+70
+00:14:21.212 --> 00:14:27.442
+And you won't believe it, it is even intelligible!
+
+71
+00:14:27.692 --> 00:14:48.402
+The material you find in the Working Drafts of the W3C or in the Requests for Comments of other standardization organizations, is the stuff that books are made of.
+
+72
+00:14:48.652 --> 00:14:54.002
+Everything that is written there, you will sooner or later see in a book somewhere. It's almost plagiarism.
+
+73
+00:14:54.252 --> 00:14:56.202
+
+
+74
+00:14:56.452 --> 00:15:00.042
+Well, have a look at your leisure.
+
+75
+00:15:00.292 --> 00:15:13.522
+Please pay special attention to the attributes and the methods of the XMLHttpRequest object.
+
+76
+00:15:13.772 --> 00:15:16.042
+There's not a lot to read, it's manageable:)
+
+77
+00:15:16.292 --> 00:15:30.282
+By working through this draft you will get a better understanding of AJAX technologies.
+
+78
+00:15:30.532 --> 00:15:35.882
+Now, open ARSnova in Firefox, as shown in the image above.
+
+79
+00:15:36.132 --> 00:15:49.242
+Log in, give feedback, and look at the HTTP traffic in Firebug.
+
+80
+00:15:49.492 --> 00:15:56.722
+In the network tab, choose XHR (XMLHttpRequest).
+
+81
+00:15:56.972 --> 00:16:17.202
+In the Header section, you see the framework that we used - a JavaScript framework.
+
+82
+00:16:17.452 --> 00:16:33.842
+The SetRequestHeader parameter tells the server that we have a local XMLHttpRequest object that is waiting for a response.
+
+83
+00:16:34.092 --> 00:16:37.082
+Practice makes perfect;)
+
+84
+00:16:37.332 --> 00:16:50.922
+It is very important to analyze the traffic protocols of existent applications to study and understand the terms and processes involved.
+
