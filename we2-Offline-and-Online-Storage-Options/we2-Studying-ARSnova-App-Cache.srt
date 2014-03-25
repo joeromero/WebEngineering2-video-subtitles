@@ -1,0 +1,121 @@
+0
+00:00:00,000 --> 00:00:07,242
+Let's examine the application cache using ARSnova as an example.
+
+1
+00:00:07,492 --> 00:00:18,242
+On the left, in Google Chrome Browser, we have loaded the ARSnova app.
+
+2
+00:00:18,492 --> 00:00:24,162
+On the right, we have the Chrome Developer Tools.
+
+3
+00:00:24,412 --> 00:00:34,682
+First, let me show how to inform the browser about the manifest file.
+
+4
+00:00:34,932 --> 00:00:44,202
+You define the manifest file as attribute of the <html> element:
+
+5
+00:00:44,452 --> 00:00:51,442
+<html manifest="arsnova.manifest">
+
+6
+00:00:51,692 --> 00:01:03,602
+Now, when we switch to the "Resources" tab, we'll see all storage options of an HTML 5 app.
+
+7
+00:01:03,852 --> 00:01:21,562
+1. Web SQL (I mentioned in the first video that not all browsers support this SQL Light database). Web SQL is not used by ARSnova
+
+8
+00:01:21,812 --> 00:01:29,202
+2. IndexedDB, used by Firefox and Internet Explorer (not used here, either)
+
+9
+00:01:29,452 --> 00:01:38,442
+ARSnova doesn't use any of these client-side SQL or NoSQL databases.
+
+10
+00:01:38,692 --> 00:01:49,002
+3. Local Storage: ARSnova does use Local Storage and there are some entries in it.
+
+11
+00:01:49,252 --> 00:01:55,722
+3. Session Storage: There are no entries.
+
+12
+00:01:55,972 --> 00:02:11,202
+4. Cookies: ARSnova uses conventional cookies 
+(At the moment, there are no entries)
+
+13
+00:02:11,452 --> 00:02:19,162
+(KQC  reloads the app to generate a cookie ...) Ah, now there is one.
+
+14
+00:02:19,412 --> 00:02:25,962
+In this cookie, the authentication data is stored.
+
+15
+00:02:26,212 --> 00:02:31,722
+5. Application Cache.
+
+16
+00:02:31,972 --> 00:02:36,722
+Here the entries in the Application Cache.
+
+17
+00:02:36,972 --> 00:02:47,322
+The Manifest File is located in the master folder and is called arsnova.manifest.
+
+18
+00:02:47,572 --> 00:02:52,082
+The list shows all entries in the Application Cache.
+
+19
+00:02:52,332 --> 00:03:15,282
+When the app is initially loaded, all resources are loaded. On the second call, all these resources are available locally and don't need to be reloaded over the internet.
+
+20
+00:03:15,532 --> 00:03:27,282
+With Sencha Cmd it's easy define which files will go into the manifest file.
+
+21
+00:03:27,532 --> 00:03:30,082
+Let's have a quick look.
+
+22
+00:03:30,332 --> 00:03:56,002
+The resources that should go into the app cache are defined in the file "app.json".
+
+23
+00:03:56,252 --> 00:04:04,282
+This file is important for you as a developer, so have a closer look at it.
+
+24
+00:04:04,532 --> 00:04:08,802
+In this file, you define the name space of the app.
+
+25
+00:04:09,052 --> 00:04:16,402
+You can also define if the app is a Single Page App (SPA) and many more things.
+
+26
+00:04:16,652 --> 00:04:27,042
+You can define, which Javascript files you want concatenated and minified.
+
+27
+00:04:27,292 --> 00:04:36,402
+You can define the CSS files that are to be concatenated and minified.
+
+28
+00:04:36,652 --> 00:04:44,562
+And finally you can define the resources that should go into the cache manifest file: 
+
+29
+00:04:44,812 --> 00:04:48,312
+In this case: The index.html, the favicon icon, JavaScript files, external (third party) JavaScript files and other resources like css-files, images etc.
+

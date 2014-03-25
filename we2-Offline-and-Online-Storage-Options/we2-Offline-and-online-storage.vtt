@@ -1,0 +1,212 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.842
+Welcome to the last chapter of this MOOC.
+
+2
+00:00:04.092 --> 00:00:11.802
+This chapter will cover an HTML5 feature that is available in all modern mobile and desktop browsers.
+
+3
+00:00:12.052 --> 00:00:13.842
+Web Storage.
+
+4
+00:00:14.092 --> 00:00:23.322
+We will have a look at the options that web developers have to store data for offline availability.
+
+5
+00:00:23.572 --> 00:00:28.282
+We will use the ARSnova app as an example to see
+
+6
+00:00:28.532 --> 00:00:40.002
+how the options for session, local storage and Web DB have been implemented.
+
+7
+00:00:40.252 --> 00:00:42.962
+
+
+8
+00:00:44.212 --> 00:00:52.922
+Offline web apps are a contradiction in terms.
+
+9
+00:00:53.172 --> 00:00:59.442
+Web apps are usually associated with working online, and here we are talking about offline-online apps.
+
+10
+00:00:59.692 --> 00:01:16.202
+However, there are many situations when an internet connection is not available and you still want to use a web app on your smartphone or tablet.
+
+11
+00:01:16.452 --> 00:01:31.722
+For example, if you are on a plane, in a tunnel, if the connection is weak etc.
+
+12
+00:01:31.972 --> 00:01:48.242
+As soon as you are back online again, you need to sync your offline data with the data on the server.
+
+13
+00:01:48.492 --> 00:02:16.282
+HTML5 offers several options to store data and the app itself (i.e. the source code) locally on a mobile device.
+
+14
+00:02:16.372 --> 00:02:23.362
+This feature is called application caching and allows for offline browsing.
+
+15
+00:02:23.612 --> 00:02:40.962
+Another advantage is that you can open your app even if you have no internet connection.
+
+16
+00:02:41.212 --> 00:02:55.122
+This way, such an app behaves as resiliently as a desktop app because no time consuming access over the internet is necessary.
+
+17
+00:02:55.372 --> 00:03:05.162
+Before HTML5, there were also ways of caching data, e.g. in the browser cache.
+
+18
+00:03:05.412 --> 00:03:09.002
+However, developer don’t have any control over these caches.
+
+19
+00:03:09.252 --> 00:03:22.082
+You can't send data to the browser cache explicitly or retrieve particular data from the browser cache.
+
+20
+00:03:22.332 --> 00:03:35.832
+With the Cache Manifest (a file with the extension .manifest), this situation has changed.
+
+21
+00:03:35.082 --> 00:03:56.802
+In this file, the developer can define the resources (HTML, CSS, JavaScript files, images, etc.) that will be available offline after an initial download.
+
+22
+00:03:57.052 --> 00:04:10.402
+In the next few videos, we will examine these storage option in a live ARSnova session.
+
+23
+00:04:10.652 --> 00:04:27.202
+There are two ways of storing data at the client side to make them available to the user when offline:
+
+24
+00:04:27.452 --> 00:04:59.762
+1. HTTP cookies allow storing small amounts of data that are moved between the server and the browser.
+
+25
+00:05:00.012 --> 00:05:21.042
+According to RFC 2109, these cookies are limited in number and size (20 cookies, 4 kb each max).
+
+26
+00:05:21.292 --> 00:05:40.002
+The HTML5 storage options are attributes of the Window object: 
+window.sessionStorage and window.localStorage
+
+27
+00:05:40.492 --> 00:05:48.442
+Both options differ with respect to the validity and duration of data persistence.
+
+28
+00:05:48.692 --> 00:06:07.282
+Session Storage is the context of the session as long as the browser runs, the browser window is open and as long as there is not page reload.
+
+29
+00:06:07.532 --> 00:06:17.322
+That means: Data stored in Session Storage is available for the duration of a session.
+
+30
+00:06:17.572 --> 00:06:42.005
+In contrast, data stored in Local Storage is available even after a session is terminated, because the data is not stored in the DOM but on the device itself.
+
+31
+00:06:42.255 --> 00:06:55.842
+The following options are available at the interface to Session Storage and Local Storage objects according to W3C:
+
+32
+00:06:56.092 --> 00:07:25.922
+length, setItem(key, value), getItem(key), removeItem(key), key(index), clear().
+
+33
+00:07:26.172 --> 00:07:35.922
+All these options are not available when using browser caches or HTTP cookies.
+
+34
+00:07:36.172 --> 00:07:42.562
+The key/value pairs of these options have to be strings.
+
+35
+00:07:42.812 --> 00:08:11.602
+To transform JS objects into strings or strings into JSON objects, use JSON.stringify() or JSON.parse(). See chapter on JSON.
+
+36
+00:08:11.852 --> 00:08:24.442
+Please keep in mind, that when using these options of client side data storage, the Same-Origin-Policy applies for JavaScript.
+
+37
+00:08:24.692 --> 00:08:46.442
+That means, only JavaScript functions from the origin domain (i.e. the domain that was originally accessed) can access data in the manifest file and the local and session storage.
+
+38
+00:08:46.692 --> 00:09:02.362
+SQL and NoSQL databases offer a far more powerful possibility to store data in a structured way.
+
+39
+00:09:02.612 --> 00:09:13.922
+The W3C had originally planned to use an SQLite based Web SQL database.
+
+40
+00:09:14.172 --> 00:09:36.722
+All browsers based on the WebKit engine (Safari, Chrome, new Opera) support this kind of storing data, an extensive SQL database.
+
+41
+00:09:36.972 --> 00:09:54.322
+Other browsers, e.g. browsers based on the Gecko engine like Firefox, or Internet Explorer, however, don't and support the W3C standard IndexedDB instead.
+
+42
+00:09:54.572 --> 00:10:14.002
+IndexedDB is a NoSQL database. But since it is not an established standard yet, we decided to use the Apache CouchDB for ARSnova.
+
+43
+00:10:14.252 --> 00:10:41.082
+NoSQL is schema-free, document based (instead of table-based) and all documents are stored in JSON format.
+(Note: No in NoSQL stands for "not only" but was also intended to stress that fact that the old SQL databases were not seen fit for web usage)
+
+44
+00:10:41.332 --> 00:11:01.242
+Apache CouchDB is an example par excellence for a RESTful HTTP API as a basis for implementing persistent data storage.
+
+45
+00:11:01.492 --> 00:11:33.522
+Instead of  SQL sequels (SELECT WHERE clauses) to query a database, in CouchDB you query the document collection and aggregate or manipulate the documents as required. A reduced single document is returned.
+
+46
+00:11:33.772 --> 00:11:47.762
+NoSQL databases borrow from Google's map/reduced programming style that is also known from functional programming languages.
+
+47
+00:11:48.012 --> 00:11:51.512
+
+
+48
+00:11:51.762 --> 00:12:05.802
+We will examine the various storage options in ARSnova using the Chrome Developer Tools.
+
+49
+00:12:06.052 --> 00:12:10.882
+Here an example of the Application Cache.
+
+50
+00:12:11.132 --> 00:12:25.002
+In a live session we will see how Session or Local Storage data is generated and stored in a user scenario.
+
+51
+00:12:25.252 --> 00:12:37.562
+Each modern application stores its data on the server.
+
+52
+00:12:37.812 --> 00:12:41.312
+The CouchDB example will show how data storage was implemented in ARSnova.
+
