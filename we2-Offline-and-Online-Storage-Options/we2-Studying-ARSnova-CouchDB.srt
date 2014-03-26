@@ -1,0 +1,115 @@
+0
+00:00:00,000 --> 00:00:10,802
+In this last video I'm going to show you how you can test CouchDB within the DeveloperVM.
+
+1
+00:00:10,802 --> 00:00:19,442
+And also how you can create an app based on CouchDB (if that's what you want to do).
+
+2
+00:00:19,692 --> 00:00:40,922
+Unfortunately, in this part of the MOOC, there isn't enough time to treat NoSQL databases in detail, because I can't expect you to have any background experience with databases or SQL databases.
+
+3
+00:00:41,172 --> 00:00:55,122
+However, you can learn everything about NoSQL databases on your own. I have compiled a short list of resources for you in this unit.
+
+4
+00:00:55,372 --> 00:01:04,242
+1. CouchDB The Definitive Guide, an excellent introduction to CouchDB.
+
+5
+00:01:04,492 --> 00:01:17,562
+I recommend that you go through the first two or three chapters of that tutorial.
+
+6
+00:01:17,812 --> 00:01:31,642
+2. Apache CouchDB Documentation, an extensive documentation that you can consult when necessary.
+
+7
+00:01:31,892 --> 00:02:03,522
+3. Complete HTTP API Reference; a really excellent and complete documentation of a RESTful API. You can test all requests listed there directly in the DeveloperVM.
+
+8
+00:02:03,772 --> 00:02:17,802
+(KQC repeats the three resources.)
+
+9
+00:02:18,052 --> 00:02:21,552
+
+
+10
+00:02:21,802 --> 00:02:24,282
+
+
+11
+00:02:24,532 --> 00:02:28,282
+It's not easy to install ARSnova. 
+
+12
+00:02:33,532 --> 00:02:59,282
+ARSnova consists of three sub-projects:
+1. The mobile client
+2. The backend (a Java enterprise edition application based on the Spring framework)
+3. A setup tool for creating the view documents for CouchDB.
+
+13
+00:02:59,532 --> 00:03:19,602
+If you want to install ARSnova in the VM, make sure there is enough disk space left. The current setup of the VM is very limited in space.
+
+14
+00:03:19,852 --> 00:03:30,002
+If you follow the instructions in this unit, you should succeed in installing ARSnova.
+
+15
+00:03:30,252 --> 00:03:40,882
+To use ARSnova locally, you have to start the complete backend in the VM.
+
+16
+00:03:41,132 --> 00:03:47,442
+In this terminal, I have started Jetty ...
+
+17
+00:03:47,692 --> 00:03:59,192
+with the ARSnova war file (war = web archive) - the  Java application of the backend.
+
+18
+00:04:00,242 --> 00:04:05,282
+The ARSnova App is running in Firefox.
+
+19
+00:04:05,532 --> 00:04:12,242
+In Google Chrome, I have opened the CouchDB database.
+
+20
+00:04:12,492 --> 00:04:19,242
+As you can see, both applications run under localhost, but using different ports.
+
+21
+00:04:19,492 --> 00:04:28,562
+ARSnova runs on port 8080, the database on port 5984.
+
+22
+00:04:28,812 --> 00:04:39,402
+Now we can extensively test the RESTful API of CouchDB ...
+
+23
+00:04:39,652 --> 00:04:55,842
+In the window, you see Futon, the administration backend of CouchDB, which is an application of CouchDB itself.
+
+24
+00:04:56,092 --> 00:04:58,802
+ARSnova is relatively empty.
+
+25
+00:04:59,052 --> 00:05:06,202
+After the initial setup, we get these view documents.
+
+26
+00:05:06,452 --> 00:05:24,322
+Just go ahead and become familiar with the new world of web-based, web-friendly NoSQL databases. CouchDB is a full-stack JavaScript application.
+
+27
+00:05:24,572 --> 00:05:28,072
+A database which is completely written in JavaScript: The data storage, the application itself as well as all other required components.
+
